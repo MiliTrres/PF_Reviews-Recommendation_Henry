@@ -22,10 +22,9 @@ def registros_duplicados(df):
     df = df[df.duplicated(keep=False)]
     return df
 
-
 def agrupar_categorias(row):
     if pd.isnull(row):
-        return 'SD'  
+        return 'Otros'  
     if 'restaurant' in row.lower():
         return 'Restaurantes'
     if 'coffee' in row.lower():
