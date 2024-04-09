@@ -1,4 +1,6 @@
 import pandas as pd
+import ast
+import numpy as np
 
 def tipo_dato(df):
     
@@ -37,4 +39,58 @@ def registros_duplicados(df):
     
     '''
     df = df[df.duplicated(keep=False)]
+    return df
+
+
+def horas_business(df):
+    '''
+    '''
+    if isinstance(df, str):
+        try:
+            return eval(df)
+        except ValueError:
+            return {}
+    else:
+        return {}
+    
+def horas_metada(df):
+    """
+    Extrae columnas de la columna 'hours' en el DataFrame.
+    Devuelve un nuevo DataFrame con las columnas extraídas.
+    Los valores nulos se rellenan con 'Sin datos'.
+    """
+
+    # Convertir diccionarios en formato de cadena a diccionarios reales
+    df['hours'] = df['hours'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else None)
+
+    # Convertir listas a diccionarios
+    df['hours'] = df['hours'].apply(lambda x: dict(x) if isinstance(x, list) else None)
+
+    # Extraer columnas de la columna 'hours'
+    hours_df = df['hours'].apply(pd.Series)
+
+    # Rellenar valores nulos con 'Sin datos'
+    hours_df = hours_df.fillna('Sin datos')
+
+    # Concatenar las columnas al DataFrame original
+    df = pd.concat([df, hours_df], axis=1)
+
+    # Eliminar la columna original 'hours'
+    df = df.drop(columns=['hours'])
+
+    return df
+
+def categoria_metadatos(df):
+    """
+    Formatea la columna 'category' en el DataFrame.
+    Convierte las cadenas de lista en listas reales y las une en una sola cadena separada por comas.
+    Los valores no válidos se reemplazan por NaN.
+    """
+
+    # Convierte las cadenas de lista en listas reales
+    df['category'] = df['category'].apply(lambda x: ast.literal_eval(x) if isinstance(x, str) else np.nan)
+
+    # Formatea las listas en una sola cadena separada por comas
+    df['category'] = df['category'].apply(lambda x: ', '.join(x) if isinstance(x, list) else x)
+
     return df
