@@ -116,3 +116,11 @@ Análisis de sentimiento
 ### Power BI y Streamlit
 
 Presentar y disponibilizar los resultados.
+
+## Pipeline
+
+<p align='center'> <img src="Img\stack tecnologico.jpg" alt="Accidente vial" width="600" height="300" ><p>
+
+## Análisis Exploratorio de Datos - EDA
+
+Este análisis puede verse de manera detallada en el archivo [EDA.ipynb](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/blob/main/EDA.ipynb)
