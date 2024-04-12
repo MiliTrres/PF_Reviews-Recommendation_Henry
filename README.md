@@ -1,3 +1,6 @@
+<h1 align="center"><b>Proyecto de Análisis y Machine Learning McDonald's</b></h1>
+
+
 # INSTRUCCIONES PARA COMENZAR A TRABAJAR EN EL PROYECTO
 
 ## 1) Crear entorno virtual
