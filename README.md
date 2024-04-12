@@ -1,3 +1,5 @@
+![Portada](https://i.imgur.com/hFWnAnb.jpeg)
+
 <h1 align="center"><b>Proyecto de Análisis y Machine Learning McDonald's</b></h1>
 
 ## Contexto
