@@ -4,6 +4,8 @@
 
 McDonald's, una de las principales empresas de comida rápida a nivel global, está implementando un sistema de incentivos para sus empleados en el estado Florida como parte de su compromiso continuo con la mejora del servicio al cliente. Este piloto no solo reconoce el desempeño excepcional del equipo, sino que también busca evaluar la efectividad del sistema en un entorno operativo real. McDonald's espera que estos incentivos fortalezcan su posición como líder en la industria y mejoren la experiencia del cliente en sus locales del estado Florida y más allá.
 
+<p align='center'> <img src="Img\Img-Mc.jpg" alt="Accidente vial" width="600" height="300" ><p>
+
 ## Estructura
 
 El presente proyecto cuuenta con las siguientes carpetas y archivos:
@@ -15,6 +17,8 @@ El presente proyecto cuuenta con las siguientes carpetas y archivos:
 ## ¿Quienes somos?
 
 En Data Feedback Solutions somos tu aliado estratégico, dedicados a convertir la opinión de tus clientes en datos valiosos. Nuestro objetivo es llevar tu negocio al siguiente nivel, proporcionándote insights precisos y relevantes para impulsar tu éxito.
+
+<p align='center'> <img src="Img\logo.jpg" alt="Accidente vial" width="300" height="300" ><p>
 
 ## Objetivo general y alcance
 
@@ -74,3 +78,39 @@ Palabras Clave por Sentimiento: Identificación de las palabras más frecuentes 
 Se ha optado por emplear la metodología Scrum, que implica reuniones periódicas de 2 o 3 veces por semana y una comunicación constante a través de plataformas colaborativas. Esto facilita la distribución de tareas y la actualización del estado de las mismas. El proyecto se dividirá en tres Sprints, cada uno con actividades que serán entregadas y revisadas cada 15 días. Posteriormente, estas entregas serán evaluadas para su aprobación o recibirán retroalimentación, según lo determine el Product Owner.
 
 El cronograma para la realización de estas actividades es el que se muestra en la imagen
+
+<p align='center'> <img src="Img\diagrama de gant.png" alt="Accidente vial" width="942" height="452" ><p>
+
+## Equipo de trabajo y roles
+
+| Integrante          | Rol              |
+|---------------------|------------------|
+| Milagros Torres     | Data Analyst     |
+| Rafael Oropeza      | ML Engineer      |
+| Dante Chincuini     | Data Engineer    |
+| Alejandra Monroy    | Data Analyst     |
+| Jonathan Zegarra    | ML Engineer      |
+
+## Stack Tecnológico
+
+<p align='center'> <img src="Img\stack tecnologico.jpg" alt="Accidente vial" width="600" height="300" ><p>
+
+### Python, pandas y numpy
+
+Manipulación de datos.
+
+### Google Cloud Platafform
+
+Extracción, transformación y manipulación de todos los conjuntos de datos. Disponibilización en la nube.
+
+### Matplotlib y Seaborn
+
+Creación de gráficos.
+
+### Scikit-learn
+
+Análisis de sentimiento
+
+### Power BI y Streamlit
+
+Presentar y disponibilizar los resultados.
