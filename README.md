@@ -119,7 +119,7 @@ Presentar y disponibilizar los resultados.
 
 ## Pipeline
 
-<p align='center'> <img src="Img\stack tecnologico.jpg" alt="Accidente vial" width="600" height="300" ><p>
+<p align='center'> <img src="Img\ciclo de vida dato.jpeg" alt="Accidente vial" width="600" height="300" ><p>
 
 ## Análisis Exploratorio de Datos - EDA
 
