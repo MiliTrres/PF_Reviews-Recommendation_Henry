@@ -94,3 +94,16 @@ def categoria_metadatos(df):
     df['category'] = df['category'].apply(lambda x: ', '.join(x) if isinstance(x, list) else x)
 
     return df
+
+def extract_address(address):
+    '''
+    Función que recibe como parametro una cadena de texto y retorna la dirección.
+    '''
+    
+    parts = address.split(',')
+    if len(parts) >= 2:
+        return parts[1].strip()
+    else:
+        return None
+    
+
