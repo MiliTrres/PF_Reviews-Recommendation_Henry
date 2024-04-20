@@ -1,6 +1,6 @@
 ![Portada](https://i.imgur.com/hFWnAnb.jpeg)
 
-<h1 align="center"><b>Proyecto de Análisis y Machine Learning McDonald's</b></h1>
+<h1 align="center"><b>Proyecto de Análisis de Datos y Machine Learning McDonald's</b></h1>
 
 ## Contexto
 
@@ -15,6 +15,8 @@ El presente proyecto cuuenta con las siguientes carpetas y archivos:
 - [Datos](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/Datos): Contiene archivos en formato .parquet filtrados por los datos de interes utilizados para la realización del EDA.
 - [ETL](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/ETL): Contiene los archivos utilizados para la realización del ETL de manera local.
 - [Img](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/Img): Contiene imagenes utilizadas durante el desarrollo del proyecto.
+- [Documentación](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/documentaci%C3%B3n): Contiene la documentación generada durante la realización del proyecto.
+- [_pycache_](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/__pycache__): Contine archivos de caché que contienen código compilado en formato bytecode. Estos archivos se generan automáticamente por el intérprete de Python.
 
 ## ¿Quienes somos?
 
@@ -34,7 +36,7 @@ $$
 \text{Aumento de reseñas positivas} = \frac{{\text{Número de reseñas positivas en el año actual} - \text{Número de reseñas positivas en el año anterior}}}{{\text{Número de reseñas positivas en el año anterior}}} \times 100
 $$
 
-- Mantener una puntuación promedio igual o superior a 4 a nivel anual.
+- Mantener una puntuación promedio igual o superior a 3.5 a nivel anual.
 
 $$
 \text{Promedio de calificaciones por año} = \frac{\sum_{i=1}^{n} \text{Calificación}_i}{\text{Número total de reseñas en el año}}
@@ -62,14 +64,17 @@ $$
 
 ## Solución propuesta y entregables
 
+### Dashboard interactivo
+
+- Sedes: Visualiza métricas y análisis por sedes para comparar el rendimiento entre ubicaciones.
+- KPI: Destaca indicadores clave de rendimiento (KPI) con métricas anuales asociadas para evaluar el desempeño a lo largo del tiempo.
+- Rankings: Muestra varios "Top 3" identificando las mejores y peores sedes en cantidad de reseñas positivas y calificación promedio.
+
 ### Sistema de recomendación
 
-Una API, con las siguientes 4 funciones
+Una API, con las siguientes 3 funciones
 
-- Top 3 locales con mayor cantidad de reseñas positivas: recibe como input el año en formato AAAA y devuelve el top 3 de locales con mayor cantidad de reseñas positivas en el estado de Florida para el año ingresado con la siguiente información, ubicación del local, cantidad de reseñas positivas y ciudad.
-- Top 3 de locales con mejor puntuación promedio por año: recibe como imput una ciudad y devuelve el top 3 de locales con mejor calificación promedio por año para la ciudad ingresada con la siguiente infomación año, ubicación del local y puntuación promedio.
-- Top 3 de locales con peor puntuación promedio por año: recibe como imput una ciudad y devuelve el top 3 de locales con peor calificación promedio por año para la ciudad ingresada con la siguiente infomación año, ubicación del local y puntuación promedio.
-- Top 3 de locales con menor porcentaje de reseñas negativas en el estado de Florida: recibe como input el año en formato AAAA y devuelve el top 3 de locales con menor porcentaje de reseñas negativas en el estado de Florida para el año ingresado con la siguiente información, ubicación del local, porcentaje de reseñas negativas y ciudad.
+En proceso
 
 ### Análisis de sentimiento
 
@@ -81,7 +86,7 @@ Se ha optado por emplear la metodología Scrum, que implica reuniones periódica
 
 El cronograma para la realización de estas actividades es el que se muestra en la imagen
 
-<p align='center'> <img src="Img\diagrama de gant.png" alt="Accidente vial" width="942" height="452" ><p>
+<p align='center'> <img src="documentación\diagrama de gant.png" width="942" height="452" ><p>
 
 ## Equipo de trabajo y roles
 
@@ -95,7 +100,7 @@ El cronograma para la realización de estas actividades es el que se muestra en 
 
 ## Stack Tecnológico
 
-<p align='center'> <img src="Img\stack tecnologico.jpg" alt="Accidente vial" width="600" height="300" ><p>
+<p align='center'> <img src="documentación\stack tecnologico.jpg" width="600" height="300" ><p>
 
 ### Python, pandas y numpy
 
@@ -119,7 +124,7 @@ Presentar y disponibilizar los resultados.
 
 ## Pipeline
 
-<p align='center'> <img src="Img\ciclo de vida dato.jpeg" alt="Accidente vial" width="600" height="300" ><p>
+<p align='center'> <img src="documentación\ciclo de vida dato.jpeg" alt="Accidente vial" width="600" height="300" ><p>
 
 ## Análisis Exploratorio de Datos - EDA
 
