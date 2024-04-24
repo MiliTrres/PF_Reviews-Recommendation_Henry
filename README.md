@@ -70,15 +70,20 @@ $$
 - KPI: Destaca indicadores clave de rendimiento (KPI) con métricas anuales asociadas para evaluar el desempeño a lo largo del tiempo.
 - Rankings: Muestra varios "Top 3" identificando las mejores y peores sedes en cantidad de reseñas positivas y calificación promedio.
 
-### Sistema de recomendación
+### Modelo predictivo de Machine Learning
 
-Una API, con las siguientes 3 funciones
+Utilizamos el algoritmo SVR (Support Vector Machine for Regression) del modelo Support Vector Machine para predecir el incremento de las calificaciones de las sucursales de McDonald's, en caso de que se realicen mejoras en áreas específicas. El modelo fue entrenado con cada una de las sucursales en un Notebook integrado a Vertex IA, accediendo a los datos almacenados y ya limpios en BigQuery. El modelo entrenado se almaceno en un bucket de Cloud Storage, para su posterior aplicación.
 
-En proceso
+Este modelo fue implementado en un endpoint creado con FastAPI, junto a dos endpoints adicionales que nos ayudarian a dimensionar la situación especifica de cierta sucursal.
 
-### Análisis de sentimiento
+#### SentimentAnalysis: 
+Este primer endpoint recibe como parametro la *location* de una sucursal, y retorna un diccionario con el total de reseñas, la cantidad de reseñas positivas, neutras y negativas.
 
-Palabras Clave por Sentimiento: Identificación de las palabras más frecuentes en reseñas positivas y negativas para comprender qué aspectos son más valorados por los clientes y cuáles son problemáticos.
+#### GetTopWords:
+Este segundo endpoint recibe como parametro la *location* de una sucursal, y retorna una nube de palabras con las palabras más frecuentes en las reseñas de baja calificación (menor a 3) para esa sucursal, dandonos una referencia de las áreas a mejorar.
+
+#### PredictScoreIncrement:
+Este tercer endpoint recibe como parametro la *location* de una sucursal, y retorna un diccionario con la calificación promedio actual, el incremento de la calificación predicho por el modelo, el porcentaje de ese incremento predicho y la calificación con el incremento sumado.
 
 ## Metodologia
 
