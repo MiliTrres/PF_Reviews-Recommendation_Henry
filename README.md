@@ -6,7 +6,7 @@
 
 McDonald's, una de las principales empresas de comida rápida a nivel global, está implementando un sistema de incentivos para sus empleados en el estado Florida como parte de su compromiso continuo con la mejora del servicio al cliente. Este piloto no solo reconoce el desempeño excepcional del equipo, sino que también busca evaluar la efectividad del sistema en un entorno operativo real. McDonald's espera que estos incentivos fortalezcan su posición como líder en la industria y mejoren la experiencia del cliente en sus locales del estado Florida y más allá.
 
-<p align='center'> <img src="Img\Img-Mc.jpg" alt="Accidente vial" width="800" height="300" ><p>
+<p align='center'> <img src="Img\Img-Mc.jpg" alt="Accidente vial" width="1000" height="400" ><p>
 
 ## Estructura
 
