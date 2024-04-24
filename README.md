@@ -6,7 +6,7 @@
 
 McDonald's, una de las principales empresas de comida rápida a nivel global, está implementando un sistema de incentivos para sus empleados en el estado Florida como parte de su compromiso continuo con la mejora del servicio al cliente. Este piloto no solo reconoce el desempeño excepcional del equipo, sino que también busca evaluar la efectividad del sistema en un entorno operativo real. McDonald's espera que estos incentivos fortalezcan su posición como líder en la industria y mejoren la experiencia del cliente en sus locales del estado Florida y más allá.
 
-<p align='center'> <img src="Img\Img-Mc.jpg" alt="Accidente vial" width="600" height="300" ><p>
+<p align='center'> <img src="Img\Img-Mc.jpg" alt="Accidente vial" width="1000" height="300" ><p>
 
 ## Estructura
 
@@ -16,7 +16,7 @@ El presente proyecto cuuenta con las siguientes carpetas y archivos:
 - [ETL](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/ETL): Contiene los archivos utilizados para la realización del ETL de manera local.
 - [Img](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/Img): Contiene imagenes utilizadas durante el desarrollo del proyecto.
 - [Documentación](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/documentaci%C3%B3n): Contiene la documentación generada durante la realización del proyecto.
-- [_pycache_](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/__pycache__): Contine archivos de caché que contienen código compilado en formato bytecode. Estos archivos se generan automáticamente por el intérprete de Python.
+- [_pycache_](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/__pycache__): Contiene archivos de caché que contienen código compilado en formato bytecode. Estos archivos se generan automáticamente por el intérprete de Python.
 
 ## ¿Quienes somos?
 
@@ -108,7 +108,7 @@ Manipulación de datos.
 
 ### Google Cloud Platafform
 
-Extracción, transformación y manipulación de todos los conjuntos de datos. Disponibilización en la nube.
+Extracción de los datos desde el Data Lake (Cloud Storage) para ser procesados y limpiados a lo largo de la pipeline (Cloud Function) y ser depositados en el Data Warehouse (BigQuery).
 
 ### Matplotlib y Seaborn
 
@@ -120,7 +120,7 @@ Análisis de sentimiento
 
 ### Power BI y Streamlit
 
-Presentar y disponibilizar los resultados.
+Presentar y disponibilizar los resultados extraídos de los datos de BigQuery.
 
 ## Pipeline
 
