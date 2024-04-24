@@ -15,7 +15,7 @@ El presente proyecto cuuenta con las siguientes carpetas y archivos:
 - [Datos](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/Datos): Contiene archivos en formato .parquet filtrados por los datos de interes utilizados para la realización del EDA.
 - [ETL](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/ETL): Contiene los archivos utilizados para la realización del ETL de manera local.
 - [Img](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/Img): Contiene imagenes utilizadas durante el desarrollo del proyecto.
-- [Documentación](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/documentaci%C3%B3n): Contiene la documentación generada durante la realización del proyecto.
+- [Documentación](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/documentaci%C3%B3n): Contiene la documentación generada durante la realización del proyecto, como el diccionario de datos, el stack tecnológico, ciclo de vida del dato, entre otros.
 - [_pycache_](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/__pycache__): Contine archivos de caché que contienen código compilado en formato bytecode. Estos archivos se generan automáticamente por el intérprete de Python.
 
 ## ¿Quienes somos?
@@ -26,7 +26,7 @@ En Data Feedback Solutions somos tu aliado estratégico, dedicados a convertir l
 
 ## Objetivo general y alcance
 
-Data Feedback Solutions ha sido contratada por McDonald's con el objetivo de mejorar el rendimiento de sus locales en el estado de Florida y asegurar que cada visita sea una experiencia que haga decir 'Me encanta'. Nuestro objetivo es convertir las reseñas de los clientes entre los años 2010  y 2022, en insights accionables que impulsen la excelencia operativa y la satisfacción del cliente en cada local.
+Data Feedback Solutions ha sido contratada por McDonald's con el objetivo de mejorar el rendimiento de sus locales en el estado de Florida y asegurar que cada visita sea una experiencia que haga decir 'Me encanta'. Nuestro objetivo es convertir las reseñas de los clientes entre los años 2011 y 2021, en insights accionables que impulsen la excelencia operativa y la satisfacción del cliente en cada local.
 
 ## Indicadores claves - KPI’s
 
@@ -124,8 +124,14 @@ Presentar y disponibilizar los resultados.
 
 ## Pipeline
 
-<p align='center'> <img src="documentación\ciclo de vida dato.jpeg" alt="Accidente vial" width="600" height="300" ><p>
+<p align='center'> <img src="documentación\ciclo de vida dato.jpeg" width="600" height="300" ><p>
 
 ## Análisis Exploratorio de Datos - EDA
 
 Este análisis puede verse de manera detallada en el archivo [EDA.ipynb](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/blob/main/EDA.ipynb)
+
+## Diagrama entidad relación 
+
+Diagrama tipo estrella, que cuenta con una tabla central de hechos, la cual es la tabla business y varias tablas de dimensiones en relaciones uno a muchos, que nos amplían el contexto y los detalles de cada sede desde la perspectiva específica de cada dimensión; esto nos permite analizar las métricas por sede.
+
+<p align='center'> <img src="documentación\diagrama ER.PNG" width="600" height="300" ><p>
