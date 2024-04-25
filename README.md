@@ -157,3 +157,8 @@ Este análisis puede verse de manera detallada en el archivo [EDA.ipynb](https:/
 Diagrama tipo estrella, que cuenta con una tabla central de hechos, la cual es la tabla business y varias tablas de dimensiones en relaciones uno a muchos, que nos amplían el contexto y los detalles de cada sede desde la perspectiva específica de cada dimensión; esto nos permite analizar las métricas por sede.
 
 <p align='center'> <img src="documentación\diagrama ER.PNG" width="600" height="300" ><p>
+
+
+## Productos finales: Dashboard  + Modelo ML
+
+Puede acceder al al dashboard interactivo y a la API deployada, con el modelo predictivo en uno de sus endpoints desde el siguiente link: [Dashboard + API](https://proyecto-final-mcdonalds-florida.streamlit.app/)
