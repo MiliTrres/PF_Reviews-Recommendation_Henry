@@ -76,7 +76,7 @@ Utilizamos el algoritmo SVR (Support Vector Machine for Regression) del modelo S
 
 Este modelo fue implementado en un endpoint creado con FastAPI, junto a dos endpoints adicionales que nos ayudarian a dimensionar la situación especifica de cierta sucursal.
 
-<p align='center'> <img src="Img\Esquema ML.jpg" alt="Esquema ML" width="300" height="300" ><p>
+<p align='center'> <img src="Img\Esquema ML.jpg" alt="Esquema ML" width="1000" height="300" ><p>
 
 #### SentimentAnalysis: 
 Este primer endpoint recibe como parametro la *location* de una sucursal, y retorna un diccionario con el total de reseñas, la cantidad de reseñas positivas, neutras y negativas.
