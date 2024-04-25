@@ -16,8 +16,8 @@ nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('stopwords')
 
-reviews = pd.read_csv('reviews.csv')
-models_by_branch = joblib.load('all_models.joblib') 
+reviews = pd.read_csv('Modelo_ML/reviews.csv')
+models_by_branch = joblib.load('Modelo_ML/all_models.joblib') 
 stopwords = set(stopwords.words('english')) 
 direcciones = reviews['address'].unique().tolist() # direcciones de sucursales
 
@@ -117,7 +117,7 @@ if st.checkbox('Palabras frecuentes en calificaciones menores a 3 estrellas'):
         Ejemplo:
             1485 Commercial Way
         '''
-        reviews = pd.read_csv('reviews.csv')
+        reviews = pd.read_csv('Modelo_ML/reviews.csv')
 
         # Verificamos si la sucursal está en el archivo de reseñas.
         if location not in reviews['address'].values:
