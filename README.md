@@ -6,7 +6,7 @@
 
 McDonald's, una de las principales empresas de comida rápida a nivel global, está implementando un sistema de incentivos para sus empleados en el estado Florida como parte de su compromiso continuo con la mejora del servicio al cliente. Este piloto no solo reconoce el desempeño excepcional del equipo, sino que también busca evaluar la efectividad del sistema en un entorno operativo real. McDonald's espera que estos incentivos fortalezcan su posición como líder en la industria y mejoren la experiencia del cliente en sus locales del estado Florida y más allá.
 
-<p align='center'> <img src="Img\Img-Mc.jpg" alt="Accidente vial" width="1000" height="300" ><p>
+<p align='center'> <img src="Img\Img-Mc.jpg" width="1000" height="300" ><p>
 
 ## Estructura
 
@@ -72,9 +72,11 @@ $$
 
 ### Modelo predictivo de Machine Learning
 
-Utilizamos el algoritmo SVR (Support Vector Machine for Regression) del modelo Support Vector Machine para predecir el incremento de las calificaciones de las sucursales de McDonald's, en caso de que se realicen mejoras en áreas específicas. El modelo fue entrenado con cada una de las sucursales en un Notebook integrado a Vertex IA, accediendo a los datos almacenados y ya limpios en BigQuery. El modelo entrenado se almaceno en un bucket de Cloud Storage, para su posterior aplicación.
+Utilizamos el algoritmo SVR (Support Vector Machine for Regression) del modelo Support Vector Machine para predecir el incremento de las calificaciones de las sucursales de McDonald's, en caso de que se realicen mejoras en áreas específicas. El modelo fue entrenado con cada una de las sucursales en un Notebook integrado a Vertex IA, accediendo a los datos limpios almacenados en BigQuery. El modelo entrenado se almaceno en un bucket de Cloud Storage, para su posterior aplicación.
 
 Este modelo fue implementado en un endpoint creado con FastAPI, junto a dos endpoints adicionales que nos ayudarian a dimensionar la situación especifica de cierta sucursal.
+
+<p align='center'> <img src="Img\Esquema ML.jpg" alt="Esquema ML" width="300" height="300" ><p>
 
 #### SentimentAnalysis: 
 Este primer endpoint recibe como parametro la *location* de una sucursal, y retorna un diccionario con el total de reseñas, la cantidad de reseñas positivas, neutras y negativas.
@@ -109,21 +111,33 @@ El cronograma para la realización de estas actividades es el que se muestra en 
 
 ### Python, pandas y numpy
 
+![VSCode](https://img.shields.io/badge/-VSCode-333333?style=flat&logo=visual-studio-code)
+![Python](https://img.shields.io/badge/-Python-333333?style=flat&logo=python)
+![Jupyter](https://img.shields.io/badge/-Jupyter-333333?style=flat&logo=jupyter)
+![Pandas](https://img.shields.io/badge/-Pandas-333333?style=flat&logo=pandas)
+
 Manipulación de datos.
 
-### Google Cloud Platafform
+### Google Cloud Plataform
+![Google Cloud Plataform](https://img.shields.io/badge/-GoogleCloudPlataform-333333?style=flat&logo=Google-Cloud-Plataform)
 
 Extracción de los datos desde el Data Lake (Cloud Storage) para ser procesados y limpiados a lo largo de la pipeline (Cloud Function) y ser depositados en el Data Warehouse (BigQuery).
 
 ### Matplotlib y Seaborn
 
+![Matplotlib](https://img.shields.io/badge/Matplotlib-333333?style=flat&logo=Matplotlib)
+![Seaborn](https://img.shields.io/badge/Seaborn-333333?style=flat&logo=Seaborn)
+
 Creación de gráficos.
 
 ### Scikit-learn
 
-Análisis de sentimiento
+Modelo de Machine Learning
 
 ### Power BI y Streamlit
+![PowerBI](https://img.shields.io/badge/PowerBI-333333?style=flat&logo=powerbi)
+![DAX](https://img.shields.io/badge/DAX-333333?style=flat&logo=DAX)
+![Streamlit](https://img.shields.io/badge/Streamlit-333333?style=flat&logo=streamlit)
 
 Presentar y disponibilizar los resultados extraídos de los datos de BigQuery.
 
