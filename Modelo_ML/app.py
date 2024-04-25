@@ -242,6 +242,3 @@ def create_tfidf_matrix(reviews_low, reviews_high):
     tfidf_matrix_high = vectorizer.transform([review['text'] for review in reviews_high])
 
     return tfidf_matrix_low, tfidf_matrix_high
-
-
-
