@@ -120,7 +120,7 @@ Manipulación de datos.
 
 ### Google Cloud Plataform
 
-![Google Cloud Plataform](https://img.shields.io/badge/-GoogleCloudPlataform-333333?style=flat&logo=Google-Cloud-Plataform)
+![Google Cloud Plataform](https://img.shields.io/badge/-Google Cloud Plataform-333333?style=flat&logo=Google-Cloud-Plataform)
 
 Extracción de los datos desde el Data Lake (Cloud Storage) para ser procesados y limpiados a lo largo de la pipeline (Cloud Function) y ser depositados en el Data Warehouse (BigQuery).
 
@@ -133,7 +133,7 @@ Creación de gráficos.
 
 ### Scikit-learn
 
-![Scikit-learn](https://img.shields.io/badge/matplotlib-333333?style=flat&logo=scikitlearn)
+![Scikit-learn](https://img.shields.io/badge/Scikitlearn-333333?style=flat&logo=scikitlearn)
 
 Modelo de Machine Learning
 
