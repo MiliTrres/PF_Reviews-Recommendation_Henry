@@ -76,7 +76,7 @@ Utilizamos el algoritmo SVR (Support Vector Machine for Regression) del modelo S
 
 Este modelo fue implementado en un endpoint creado con FastAPI, junto a dos endpoints adicionales que nos ayudarian a dimensionar la situación especifica de cierta sucursal.
 
-<p align='center'> <img src="Img\Esquema ML.jpg" alt="Esquema ML" width="1000" height="300" ><p>
+<p align='center'> <img src="Img\Esquema ML.jpg" alt="Esquema ML" width="600" height="300" ><p>
 
 #### SentimentAnalysis: 
 Este primer endpoint recibe como parametro la *location* de una sucursal, y retorna un diccionario con el total de reseñas, la cantidad de reseñas positivas, neutras y negativas.
@@ -119,18 +119,21 @@ El cronograma para la realización de estas actividades es el que se muestra en 
 Manipulación de datos.
 
 ### Google Cloud Plataform
+
 ![Google Cloud Plataform](https://img.shields.io/badge/-GoogleCloudPlataform-333333?style=flat&logo=Google-Cloud-Plataform)
 
 Extracción de los datos desde el Data Lake (Cloud Storage) para ser procesados y limpiados a lo largo de la pipeline (Cloud Function) y ser depositados en el Data Warehouse (BigQuery).
 
 ### Matplotlib y Seaborn
 
-![Matplotlib](https://img.shields.io/badge/Matplotlib-333333?style=flat&logo=Matplotlib)
-![Seaborn](https://img.shields.io/badge/Seaborn-333333?style=flat&logo=Seaborn)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-333333?style=flat&logo=matplotlib)
+![Seaborn](https://img.shields.io/badge/Seaborn-333333?style=flat&logo=seaborn)
 
 Creación de gráficos.
 
 ### Scikit-learn
+
+![Scikit-learn](https://img.shields.io/badge/matplotlib-333333?style=flat&logo=scikitlearn)
 
 Modelo de Machine Learning
 
