@@ -23,7 +23,7 @@ with col1:
    
 
 with col2:
-   st.image('../Img/lovin.png', width = 200)
+   st.image('Img/lovin.png', width = 200)
 st.markdown('***') # linea separadora 	
 
 st.title("¿Quiénes somos?") # titulo
