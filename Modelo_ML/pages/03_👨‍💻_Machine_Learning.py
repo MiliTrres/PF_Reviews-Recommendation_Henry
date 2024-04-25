@@ -1,4 +1,3 @@
-from fastapi import HTTPException
 import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from scipy.sparse import vstack
@@ -13,40 +12,43 @@ from collections import Counter
 import streamlit as st
 import tempfile
 
-st.set_page_config(page_icon="👨‍💻", page_title="Machine Learning", layout="wide") # Pestaña navegador
-st.image("https://i.imgur.com/cBlhTU9.png", width=200) # Logo
-st.title("Machine Learning McDonald's") # titulo
-st.markdown('***') # linea separadora
-
-# Logo en la barra lateral  
-#st.sidebar.image("https://i.imgur.com/cBlhTU9.png")
-st.sidebar.markdown('Panel al lado izquierdo')
-
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('stopwords')
 
 reviews = pd.read_csv('reviews.csv')
-models_by_branch = joblib.load('all_models.joblib')
-stopwords = set(stopwords.words('english'))
+models_by_branch = joblib.load('all_models.joblib') 
+stopwords = set(stopwords.words('english')) 
+direcciones = reviews['address'].unique().tolist() # direcciones de sucursales
 
+st.set_page_config(page_icon="👨‍💻", page_title="Machine Learning", layout="wide") # Pestaña navegador
+st.image("https://i.imgur.com/cBlhTU9.png", width=200) # Logo
+st.title("Modelo predictivo para McDonald's") # titulo
+st.markdown('***') # linea separadora
+
+
+st.markdown("##### Predecir el incremento de las calificaciones de las sucursales de McDonald's, en caso de que se realicen mejoras en áreas específicas.")
+st.markdown('##### Este modelo predictivo fue implementado junto a dos endpoints adicionales que nos ayudarian a dimensionar la situación especifica de cierta sucursal.')
+st.info('Solo puede desplegar un endpoint a la vez.', icon="ℹ️")
+
+st.markdown('***')
 #///////////// SENTIMENT ANALYSIS /////////////
-if st.checkbox('Sentiment analysis'):
+if st.checkbox('Análisis de sentimiento'):
     # Informacion de funcion
-    st.markdown('''
-            Función que recibe como parametro la dirección exacta de una sucursal y retorna la cantidad de reseñas positivas, neutras y negativas para esa sucursal.  
-            Args:  
-                location (str): Dirección exacta de la sucursal.  
-            Returns:  
-                dict: Diccionario con la cantidad de reseñas positivas, neutras y negativas.  
-            Ejemplo:  
-                1590 Missouri Ave
-            ''')
+    st.write('Función que recibe la dirección exacta de una sucursal y retorna la cantidad total de reseñas, la cantidad de reseñas positivas, neutras y negativas para esa sucursal.')  
+    st.write('⚠️Debe ingresar la dirección exacta de la sucursal.')  
+    st.write('Ejemplo:')
+    st.write('1590 Missouri Ave')
+
     # Input de sucursal a buscar
-    title = st.text_input('sentiment',value='',placeholder='sentiment_analysis',key='text_input')
+    sucursal = st.selectbox(
+    " ",
+    direcciones,
+    index=None,
+    placeholder="Seleccione una sucursal",
+    )
     
-    
-    def sentiment_analysis(location: str):
+    def sentiment_analysis(location: str): 
             '''
             Función que recibe como parametro la dirección exacta de una sucursal y retorna la cantidad de reseñas positivas, neutras y negativas para esa sucursal.
             Args:
@@ -56,14 +58,11 @@ if st.checkbox('Sentiment analysis'):
             Ejemplo:
                 1590 Missouri Ave
             '''
-            try:
-                # Normalizamos la dirección ingresada para que se puedan comparar con las direcciones en el archivo correctamente.
-                location = title
-
-                # Verificamos si la sucursal está en el archivo de reseñas.
-                if location not in reviews['address'].values:
-                    raise HTTPException(status_code=404, detail=f"Sucursal '{location}' no encontrada")
-                
+            # Verificamos si la sucursal está en el archivo de reseñas.
+            if location not in reviews['address'].values:
+                st.error(f'Sucursal **"{location}"** no encontrada.', icon="🚨")
+                return
+            else:
                 # Filtramos las reseñas de la sucursal especificada
                 reviews_by_branch = reviews[reviews['address'] == location]
 
@@ -73,41 +72,41 @@ if st.checkbox('Sentiment analysis'):
                 negative_reviews = reviews_by_branch[reviews_by_branch['rating'] < 3.0].shape[0]
 
                 result = f"Total de reseñas: {reviews_by_branch.shape[0]}\n\n" \
-                 f"Reseñas positivas: {positive_reviews}\n\n" \
-                 f"Reseñas neutras: {neutral_reviews}\n\n" \
-                 f"Reseñas negativas: {negative_reviews}"
+                f"Reseñas positivas: {positive_reviews}\n\n" \
+                f"Reseñas neutras: {neutral_reviews}\n\n" \
+                f"Reseñas negativas: {negative_reviews}"
 
                 # Mostramos el resultado con formato Markdown
-                st.markdown(result)
+                st.success(result)
+    
 
-            except Exception as e:
-                    raise HTTPException(status_code=500, detail=str(e))
-
-    # Botones de Reset y Mostrar Resultado
     if st.button("Reset", type="primary", key='reset_button'):
-        title = ''  # Vaciar el campo de entrada de texto
+        sucursal = ''  # Vaciar el campo de entrada de texto
+    
     if st.button('Mostrar resultado', key='show_result_button'):
-        if title:
-            st.write(sentiment_analysis(title))
-        else:
-            st.warning("Por favor, ingresa una dirección correcta.")
+        sentiment_analysis(sucursal)
+
+
+st.markdown('***') # linea separadora
+
 
 #///////////// GET TOP WORDS /////////////
-if st.checkbox('Get top words'):
+if st.checkbox('Palabras frecuentes en calificaciones menores a 3 estrellas'):
 
     # Informacion de funcion
-    '''
-        Función que recibe como parametro la dirección exacta de una sucursal y retorna las palabras más frecuentes en las reseñas bajas de esa sucursal, en una nube de palabras.  
-        Args:  
-            location (str): Dirección exacta de la sucursal.  
-        Returns:  
-            StreamingResponse: Imagen en formato PNG con la nube de palabras.  
-        Ejemplo:  
-            1485 Commercial Way 
-        '''
-    
+    st.write('Función que recibe la dirección exacta de una sucursal, y retorna una nube de palabras con las palabras más frecuentes en las reseñas de baja calificación (menor a 3) para esa sucursal, dandonos una referencia de las áreas a mejorar.')  
+    st.write('⚠️Debe ingresar la dirección exacta de la sucursal.')  
+    st.write('Ejemplo:')
+    st.write('1485 Commercial Way')
+
     # Input de sucursal a buscar
-    title = st.text_input('get top words', placeholder='get top words')
+    sucursal = st.selectbox(
+    " ",
+    direcciones,
+    index=None,
+    placeholder="Seleccione una sucursal",
+    )
+    
     def get_top_words(location: str):
         '''
         Función que recibe como parametro la dirección exacta de una sucursal y retorna las palabras más frecuentes en las reseñas bajas de esa sucursal, en una nube de palabras.
@@ -118,11 +117,14 @@ if st.checkbox('Get top words'):
         Ejemplo:
             1485 Commercial Way
         '''
-        try:
-            # Normalizamos la dirección ingresada para que se puedan comparar con las direcciones en el archivo correctamente.
-            location = title
-            reviews = pd.read_csv('reviews.csv')
+        reviews = pd.read_csv('reviews.csv')
 
+        # Verificamos si la sucursal está en el archivo de reseñas.
+        if location not in reviews['address'].values:
+            st.error(f'Sucursal "{location}" no encontrada.', icon="🚨")
+            return
+        
+        else:
             # Filtramos las reseñas por la sucursal especificada y con rating menor a 3.0.
             reviews = reviews[(reviews['address'] == location) & (reviews['rating'] < 3.0)]['text']
 
@@ -131,6 +133,11 @@ if st.checkbox('Get top words'):
 
             # Unimos todas las reseñas en un solo texto
             full_text = ' '.join(processed_reviews)
+
+            # Verificamos si hay palabras disponibles
+            if not full_text:
+                st.warning(f"No hay palabras disponibles para generar la nube de palabras.")
+                return
 
             # Contamos la frecuencia de las palabras
             word_freq = Counter(full_text.split())
@@ -145,19 +152,20 @@ if st.checkbox('Get top words'):
 
             # Retornamos la ruta del archivo temporal
             return image_path
-
-        except Exception as e:
-            raise HTTPException(status_code=500, detail=str(e))
-
+    
     # Botones de Reset y Mostrar Resultado
-    if st.button("Reset", key='reset_button'):
-        title = ''  # Vaciar el campo de entrada de texto
+    if st.button("Reset", type="primary", key='reset_button'):
+        sucursal = ''  # Vaciar el campo de entrada de texto
     if st.button('Mostrar resultado', key='show_result_button'):
-        if title:
-            image_path = get_top_words(title)
-            st.image(image_path)
-        else:
-            st.warning("Por favor, ingresa una dirección correcta.")
+        try:
+            image_path = get_top_words(sucursal)
+            if image_path is not None:
+                st.image(image_path)
+        except AttributeError:
+            pass
+
+st.markdown('***') # linea separadora
+
 
 #///////////// FUNCION AUXILIAR PARA ML /////////////
 def get_reviews_by_local(local_name):
@@ -212,20 +220,25 @@ def create_tfidf_matrix(reviews_low, reviews_high):
 
     return tfidf_matrix_low, tfidf_matrix_high
 
+
+
 #///////////// PREDICT SCORE INCREMENT /////////////
-if st.checkbox('Predict score increment'):
+if st.checkbox('Predecir el aumento de calificaciones'):
     # Informacion de funcion
-    '''
-        Función que recibe como parametro la dirección exacta de una sucursal y retorna el puntaje promedio actual, el incremento del puntaje y el puntaje promedio con incremento.  
-        Args:  
-            location (str): Dirección exacta de la sucursal.  
-        Returns:  
-            dict: Diccionario con el puntaje promedio actual, el incremento del puntaje, el porcentaje de incremento y el puntaje promedio con incremento.  
-        Ejemplo:  
-            9814 International Dr 
-        '''
+    st.write('Función que recibe la dirección exacta de una sucursal y retorna un la calificación promedio actual, el incremento de la calificación predicho por el modelo, el porcentaje de ese incremento predicho y la calificación con el incremento sumado.')  
+    st.write('⚠️Debe ingresar la dirección exacta de la sucursal.')  
+    st.write('Ejemplo:')
+    st.write('9814 International Dr')
+
     # Input de sucursal a buscar
-    title = st.text_input('Predict score increment',key='text_input', placeholder='Predict',)
+
+    sucursal = st.selectbox(
+    " ",
+    direcciones,
+    index=None,
+    placeholder="Seleccione una sucursal",
+    )
+    
     def predict_score_increment(location: str):
         '''
         Función que recibe como parametro la dirección exacta de una sucursal y retorna el puntaje promedio actual, el incremento del puntaje y el puntaje promedio con incremento.
@@ -236,14 +249,11 @@ if st.checkbox('Predict score increment'):
         Ejemplo:
             9814 International Dr 
         '''
-        try:
-            # Normalizamos la dirección ingresada para que se puedan comparar con las direcciones en el archivo correctamente.
-            location = title
 
-            # Verificamos si la sucursal está en el diccionario de modelos
-            if location not in models_by_branch:
-                raise HTTPException(status_code=404, detail=f"Modelo para la sucursal '{location}' no encontrado")
-
+        # Verificamos si la sucursal está en el diccionario de modelos
+        if location not in models_by_branch:
+            st.error(f'Sucursal "{location}" no encontrada.', icon="🚨")
+        else:
             # Obtenemos el modelo correspondiente a la sucursal
             model = models_by_branch[location]
 
@@ -272,22 +282,14 @@ if st.checkbox('Predict score increment'):
                     f"Incremento del puntaje predicho: {round(np.mean(predicted_increases), 2)}\n\n" \
                     f"Porcentaje de incremento predicho: {round(score_increment_percentage, 2)}%\n\n" \
                     f"Puntaje promedio con incremento: {round(np.mean(updated_ratings), 2)}"
-            st.markdown(resultado)
-        
-        except FileNotFoundError:
-            raise HTTPException(status_code=404, detail=f"Modelo para la sucursal '{location}' no encontrado")
-        except Exception as e:
-            raise HTTPException(status_code=500, detail=str(e))
-        
+            st.success(resultado)
+    
     # Botones de Reset y Mostrar Resultado
-    if st.button("Reset", key='reset_button'):
-        title = ''  # Vaciar el campo de entrada de texto
+    if st.button("Reset", type="primary", key='reset_button'):
+        sucursal = ''  # Vaciar el campo de entrada de texto
+    
     if st.button('Mostrar resultado', key='show_result_button'):
-        if title:
-            st.write(predict_score_increment(title))
-        else:
-            st.warning("Por favor, ingresa una dirección correcta.")
+        predict_score_increment(sucursal)
 
 # Genera linea separadora
 st.markdown('***')
-st.write('prueba....')
