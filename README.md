@@ -16,6 +16,7 @@ El presente proyecto cuuenta con las siguientes carpetas y archivos:
 - [ETL](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/ETL): Contiene los archivos utilizados para la realización del ETL de manera local.
 - [Img](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/Img): Contiene imagenes utilizadas durante el desarrollo del proyecto.
 - [Documentación](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/documentaci%C3%B3n): Contiene la documentación generada durante la realización del proyecto, como el diccionario de datos, el stack tecnológico, ciclo de vida del dato, entre otros.
+- [Modelo ML](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/Modelo_ML): Contiene los archivos necesarios para el funcionamiento del modelo de machine learning.
 - [_pycache_](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/__pycache__): Contiene archivos de caché que contienen código compilado en formato bytecode. Estos archivos se generan automáticamente por el intérprete de Python.
 
 ## ¿Quienes somos?
@@ -91,9 +92,17 @@ Este tercer endpoint recibe como parametro la *location* de una sucursal, y reto
 
 Se ha optado por emplear la metodología Scrum, que implica reuniones periódicas de 2 o 3 veces por semana y una comunicación constante a través de plataformas colaborativas. Esto facilita la distribución de tareas y la actualización del estado de las mismas. El proyecto se dividirá en tres Sprints, cada uno con actividades que serán entregadas y revisadas cada 15 días. Posteriormente, estas entregas serán evaluadas para su aprobación o recibirán retroalimentación, según lo determine el Product Owner.
 
-El cronograma para la realización de estas actividades es el que se muestra en la imagen
+A continuación se muestra el cronograma inicial para la realización de las actividades del proyecto:
 
 <p align='center'> <img src="documentación\diagrama de gant.png" width="942" height="452" ><p>
+
+Este cronograma servirá como guía principal para el desarrollo del proyecto, ayudando a coordinar las tareas y asegurando el cumplimiento de los plazos establecidos. A medida que avancemos en el proyecto, revisaremos periódicamente el cronograma para realizar ajustes según sea necesario.
+
+A continuación se muestra el cronograma final del proyecto con las fechas de ejecución de las actividades:
+
+<p align='center'> <img src="documentación\diagrama gantt final.png" ><p>
+
+El seguimiento de este cronograma nos permitió gestionar eficazmente el proyecto y alcanzar nuestros objetivos dentro de los plazos establecidos.
 
 ## Equipo de trabajo y roles
 
@@ -158,7 +167,8 @@ Diagrama tipo estrella, que cuenta con una tabla central de hechos, la cual es l
 
 <p align='center'> <img src="documentación\diagrama ER.PNG" width="600" height="300" ><p>
 
+## Productos finales: Informe, Dashboard  + Modelo ML
 
-## Productos finales: Dashboard  + Modelo ML
+El informe de análisis, que aborda los aspectos clave de este proyecto junto con sus conclusiones y recomendaciones, está disponible en el siguiente enlace: [Informe de Análisis](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/blob/main/Informe%20anal%C3%ADtico%20del%20proyecto.pdf)
 
 Puede acceder al al dashboard interactivo y a la API deployada, con el modelo predictivo en uno de sus endpoints desde el siguiente link: [Dashboard + API](https://proyecto-final-mcdonalds-florida.streamlit.app/)
