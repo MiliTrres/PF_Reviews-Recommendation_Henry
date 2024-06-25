@@ -96,12 +96,6 @@ A continuación se muestra el cronograma inicial para la realización de las act
 
 <p align='center'> <img src="documentación\diagrama de gant.png" width="942" height="452" ><p>
 
-Este cronograma servirá como guía principal para el desarrollo del proyecto, ayudando a coordinar las tareas y asegurando el cumplimiento de los plazos establecidos. A medida que avancemos en el proyecto, revisaremos periódicamente el cronograma para realizar ajustes según sea necesario.
-
-A continuación se muestra el cronograma final del proyecto con las fechas de ejecución de las actividades:
-
-<p align='center'> <img src="documentación\diagrama gantt final.png" ><p>
-
 El seguimiento de este cronograma nos permitió gestionar eficazmente el proyecto y alcanzar nuestros objetivos dentro de los plazos establecidos.
 
 ## Equipo de trabajo y roles
