@@ -1,6 +1,6 @@
 ![Portada](https://i.imgur.com/hFWnAnb.jpeg)
 
-<h1 align="center"><b>Análisis de las reseñas de usuarios en Yelp y Google Maps - McDonald´s</b></h1>
+# <h1 align="center"><b> **Análisis de las reseñas de usuarios en Yelp y Google Maps - McDonald´s** </b></h1>
 
 <h2 align="center"> Contexto </h2>
 
