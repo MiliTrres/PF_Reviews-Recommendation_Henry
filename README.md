@@ -12,7 +12,7 @@ McDonald's, una de las principales empresas de comida rápida a nivel global, es
 
 El presente proyecto cuenta con las siguientes carpetas y archivos:
 
-- [Datos](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/Datos): Contiene archivos en formato .parquet filtrados por los datos de interes utilizados para la realización del EDA.
+- [Datos](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/Datos): Contiene los archivos en formato .parquet utilizados durante el proyecto.
 - [ETL](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/ETL): Contiene los archivos utilizados para la realización del ETL de manera local.
 - [Img](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/Img): Contiene imagenes utilizadas durante el desarrollo del proyecto.
 - [Documentación](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/documentaci%C3%B3n): Contiene la documentación generada durante la realización del proyecto, como el diccionario de datos, el stack tecnológico, ciclo de vida del dato, entre otros.
