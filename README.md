@@ -8,7 +8,7 @@ McDonald's, una de las principales empresas de comida rápida a nivel global, es
 
 <p align='center'> <img src="Img\Img-Mc.jpg" width="1000" height="300" ><p>
 
-## Estructura
+<h2 align="center"> Estructura </h2>
 
 El presente proyecto cuuenta con las siguientes carpetas y archivos:
 
