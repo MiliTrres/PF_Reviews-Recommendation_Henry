@@ -10,7 +10,7 @@ McDonald's, una de las principales empresas de comida rápida a nivel global, es
 
 <h2 align="center"> Estructura </h2>
 
-El presente proyecto cuuenta con las siguientes carpetas y archivos:
+El presente proyecto cuenta con las siguientes carpetas y archivos:
 
 - [Datos](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/Datos): Contiene archivos en formato .parquet filtrados por los datos de interes utilizados para la realización del EDA.
 - [ETL](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/ETL): Contiene los archivos utilizados para la realización del ETL de manera local.
