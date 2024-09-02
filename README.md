@@ -2,7 +2,7 @@
 
 <h1 align="center"><b>Análisis de las reseñas de usuarios en Yelp y Google Maps - McDonald´s</b></h1>
 
-<h2 align="center"> ## Contexto </h2>
+<h2 align="center"> Contexto </h2>
 
 McDonald's, una de las principales empresas de comida rápida a nivel global, está implementando un sistema de incentivos para sus empleados en el estado Florida como parte de su compromiso continuo con la mejora del servicio al cliente. Este piloto no solo reconoce el desempeño excepcional del equipo, sino que también busca evaluar la efectividad del sistema en un entorno operativo real. McDonald's espera que estos incentivos fortalezcan su posición como líder en la industria y mejoren la experiencia del cliente en sus locales del estado Florida y más allá.
 
