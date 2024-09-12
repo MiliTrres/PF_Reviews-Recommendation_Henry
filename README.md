@@ -57,7 +57,7 @@ $$
 \text{Reducción en tasa de reseñas negativas} = \frac{{\text{Tasa de reseñas negativas en el año anterior} - \text{Tasa de reseñas negativas en el año actual}}}{{\text{Tasa de reseñas negativas en el año anterior}}} \times 100
 $$
 
-## Objetivos especificos
+## <h2 align='center'> Objetivos especificos </h2>
 
 - Conocer el top 3 de locales con mejores reseñas año a año.
 - Evaluar de manera efectiva el desempeño de cada local.
