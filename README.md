@@ -19,7 +19,7 @@ El presente proyecto cuenta con las siguientes carpetas y archivos:
 - [Modelo ML](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/Modelo_ML): Contiene los archivos necesarios para el funcionamiento del modelo de machine learning.
 - [_pycache_](https://github.com/DJChincuini/PF_Reviews-Recommendation_Henry/tree/main/__pycache__): Contiene archivos de caché que contienen código compilado en formato bytecode. Estos archivos se generan automáticamente por el intérprete de Python.
 
-## ¿Quienes somos?
+<h2 align="center"> ¿Quienes somos? </h2>
 
 En Data Feedback Solutions somos tu aliado estratégico, dedicados a convertir la opinión de tus clientes en datos valiosos. Nuestro objetivo es llevar tu negocio al siguiente nivel, proporcionándote insights precisos y relevantes para impulsar tu éxito.
 
