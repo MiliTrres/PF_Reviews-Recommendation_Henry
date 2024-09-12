@@ -25,7 +25,7 @@ En Data Feedback Solutions somos tu aliado estratégico, dedicados a convertir l
 
 <p align='center'> <img src="Img\logo.jpg" alt="Accidente vial" width="300" height="300" ><p>
 
-## Objetivo general y alcance
+##  <h2 align="center"> Objetivo general y alcance </h2>
 
 Data Feedback Solutions ha sido contratada por McDonald's con el objetivo de mejorar el rendimiento de sus locales en el estado de Florida y asegurar que cada visita sea una experiencia que haga decir 'Me encanta'. Nuestro objetivo es convertir las reseñas de los clientes entre los años 2011 y 2021, en insights accionables que impulsen la excelencia operativa y la satisfacción del cliente en cada local.
 
